@@ -1,6 +1,19 @@
+<% if logged_in? %>
+
+<section id="main-section"> <h1> Welcome to the Dog Blog! Woof! </h1>
+
+  <a href="/users/<%= current_user.id %>"> <%= current_user.user_name %> </a>
+  <a href="/logout">Logout</a>
+
+</section>
+
+<% else %>
+
 <section id="main-section"> <h1> Welcome to the Dog Blog! Woof! </h1>
 
   <a href="/login">Login</a>
   <a href="/register">Register</a>
 
 </section>
+
+<% end %>
