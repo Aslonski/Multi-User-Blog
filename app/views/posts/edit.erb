@@ -1,0 +1,10 @@
+<%= erb :'/_header' %>
+
+<section id="main-section">
+  <form action="/posts/<%= @post.id %>" method="post" >
+    <input type="hidden" name="_method" value="put" >
+    <input type="text" name="post[title]" value="<%= @post.title %>" >
+    <input type="text" name="post[content]" value="<%= @post.content %>" >
+    <input type="submit" value="Save">
+  </form>
+</section>

@@ -1,1 +1,14 @@
-show.erb
+<%= erb :'/_header' %>
+
+<section id="posts-section">
+  <h1> <%= current_user.user_name %>'s posts: </h1>
+  <% @posts.each do |post| %>
+    <ul>
+      <li>
+        <b> <%= post.title %> </b>
+        <br>
+        <%= post.content %>
+      </li>
+    </ul>
+  <% end %>
+</section>

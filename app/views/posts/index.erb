@@ -1,1 +1,22 @@
-<h1> Welcome to the Dog Blog! Woof! </h1>
+<%= erb :'/_header' %>
+
+<section id="posts-section">
+  <h2> Latest posts: </h2>
+  <% @posts.each do |post| %>
+    <ul>
+      <li class="post">
+      <b> <%= post.title %> </b>
+      |
+      <% author = @users.where(id: post.author_id).first %>
+      <span class="author"> by <%= author.user_name %></span>
+      <br>
+       <%= post.content %> </li>
+
+      <% if logged_in? && post.author_id == current_user.id %>
+        <a href="/posts/<%= post.id %>/delete"> Delete Post </a>
+        |
+        <a href="/posts/<%= post.id %>/edit"> Edit Post</a>
+      <% end %>
+    </ul>
+  <% end %>
+</section>
