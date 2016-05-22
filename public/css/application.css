@@ -8,3 +8,11 @@
 a {
   text-decoration: none;
 }
+
+#posts-section {
+    background-color: #a8a8a8;
+    max-width: 75%;
+    height: 850px;
+    margin: auto;
+
+}
