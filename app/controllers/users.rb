@@ -14,5 +14,6 @@ post '/register' do
 end
 
 get '/users/:id' do
+  @posts = Post.where(author_id: current_user.id)
   erb :'/users/show'
 end

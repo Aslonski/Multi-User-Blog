@@ -1,2 +1,15 @@
 <section id="main-section">
+  <h1> Welcome to Blog or whatever </h1>
+  <% if logged_in? %>
+
+    <a href="/">Home</a>
+    <a href="/users/<%= current_user.id %>"> <%= current_user.user_name %> </a>
+    <a href="/posts/new">Create Post</a>
+    <a href="/logout">Logout</a>
+
+  <% else %>
+
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
+    <% end %>
 </section>

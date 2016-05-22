@@ -1,29 +1,22 @@
-<% if logged_in? %>
-
-<section id="main-section"> <h1> Welcome to the Dog Blog! Woof! </h1>
-
-  <a href="/users/<%= current_user.id %>"> <%= current_user.user_name %> </a>
-  <a href="/logout">Logout</a>
-
-</section>
+<%= erb :'/_header' %>
 
 <section id="posts-section">
   <h2> Latest posts: </h2>
-  </section>
+  <% @posts.each do |post| %>
+    <ul>
+      <li class="post">
+      <b> <%= post.title %> </b>
+      |
+      <% author = @users.where(id: post.author_id).first %>
+      <span class="author"> by <%= author.user_name %></span>
+      <br>
+       <%= post.content %> </li>
 
-<% else %>
-
-<section id="main-section"> <h1> Welcome to the Dog Blog! Woof! </h1>
-
-  <a href="/login">Login</a>
-  <a href="/register">Register</a>
-
+      <% if logged_in? && post.author_id == current_user.id %>
+        <a href="/posts/<%= post.id %>/delete"> Delete Post </a>
+        |
+        <a href="/posts/<%= post.id %>/edit"> Edit Post</a>
+      <% end %>
+    </ul>
+  <% end %>
 </section>
-<section id="posts-section">
-  <h2> Latest posts: </h2>
-  <ul>
-    <li></li>
-  </ul>
-  </section>
-
-<% end %>
