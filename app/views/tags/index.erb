@@ -1,0 +1,9 @@
+<%= erb :'/_header' %>
+<div id="posts-section">
+  <h1> Available tags: </h1>
+  <% @tags.each do |tag| %>
+  <ul>
+    <li> <a href="/tags/<%= tag.id %>/posts"> <%= tag.name %> </a> </li>
+  </ul>
+  <% end %>
+  </div>

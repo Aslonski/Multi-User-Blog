@@ -1,0 +1,13 @@
+<%= erb :'/_header' %>
+<div id="posts-section">
+  <h1> Posts related to <%= @taggings.first.tag.name %> </h1>
+  <% @taggings.each do |tagging| %>
+    <ul>
+      <li>
+  <b> <%= tagging.post.title %> </b>
+  <br>
+    <%= tagging.post.content %>
+      </li>
+    </ul>
+    <% end %>
+</div>
