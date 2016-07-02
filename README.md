@@ -1,2 +1,2 @@
 # Multi-User-Blog
-Sinatra exercise
+Using Sinatra and Ruby.
