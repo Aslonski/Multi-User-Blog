@@ -1,19 +1,22 @@
 #main-section {
   max-width: 75%;
-  background-color: #D3D3D3;
+  background-color: rgb(142, 142, 142);
   margin: auto;
   text-align: center;
   padding-bottom: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border: solid black 1px;
+  border-radius: 10px;
 }
 
 a {
   text-decoration: none;
   color: #005FCC;
-
 }
 
 a:hover {
-  color: red;
+  color: white;
 }
 
 #posts-section {
@@ -21,6 +24,7 @@ a:hover {
     max-width: 75%;
     margin: auto;
     padding: 15px;
+    border: solid black 1px;
     border-radius: 10px;
 }
 
@@ -43,4 +47,26 @@ body {
 
 .post {
  word-wrap: break-word;
+}
+
+h1 {
+  color: rgb(0, 255, 208);
+  text-shadow: 2px 2px 4px #000000
+}
+
+footer {
+  background-color: rgb(142, 142, 142);
+  border-top: 1px solid black;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 75px;
+  width: 100%;
+  margin-top: 1%;
+}
+
+#green-text {
+  color: rgb(0, 255, 208);
+  text-shadow: 2px 2px 4px #000000
 }

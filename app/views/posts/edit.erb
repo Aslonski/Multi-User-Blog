@@ -5,6 +5,23 @@
     <input type="hidden" name="_method" value="put" >
     <input type="text" name="post[title]" value="<%= @post.title %>" >
     <input type="text" name="post[content]" value="<%= @post.content %>" >
+    <br>
+  <label>Available Tags: </label>
+  <br>
+    <select name="post[tag_list]" multiple>
+      <% @tags.each do |tag| %>
+        <% if @post.tags.include?(tag) %>
+          <option value="<%= tag.name %>" selected> <%= tag.name %> </option>
+       <% else %>
+         <option value="<%= tag.name %>"> <%= tag.name %> </option>
+        <% end %>
+      <% end %>
+    </select>
+    <br>
+    <label> New Tags: </label>
+    <br>
+    <input type="text" name="post[tag_list]" placeholder="Tags sep by ,">
+    <br>
     <input type="submit" value="Save">
   </form>
 </section>
