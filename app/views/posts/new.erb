@@ -1,10 +1,12 @@
 <%= erb :"/_header" %>
 
 <section id="main-section">
-  <form action="/posts/new" method="post">
-    <input type="text" name="title" placeholder="Title">
+  <form action="/posts" method="post">
+    <input type="text" name="post[title]" placeholder="Title">
     <br>
-    <textarea name="content" placeholder="Content"> </textarea>
+        <input type="text" name="post[tag_list]" placeholder="tags (sep by ,)">
+<br>
+    <textarea name="post[content]" placeholder="Content"> </textarea>
     <br>
     <input type="submit" value="Post">
   </form>

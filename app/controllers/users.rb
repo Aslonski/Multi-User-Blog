@@ -1,4 +1,4 @@
-get '/register' do
+get '/users/new' do
   erb :'register'
 end
 
