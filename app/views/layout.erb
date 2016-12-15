@@ -26,14 +26,16 @@
       window.intercomSettings = {
         app_id: 'snjs2skj',
         name: "<%= current_user.user_name %>", 
-        email: "<%= current_user.email %>"
+        email: "<%= current_user.email %>",
+        custom_attributes {
+        "logo": true
+      }
       };
     </script>
   <% else %>
       <script>
         window.intercomSettings = {
-          app_id: 'snjs2skj',
-          test_attribute: '999999'
+          app_id: 'snjs2skj'
         };
       </script>
   <% end %>
